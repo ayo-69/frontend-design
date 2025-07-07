@@ -1,0 +1,101 @@
+.outer-spinner {
+  width: 100px;
+  height: 100px;
+  border: 8px solid #ddd;
+  border-top: 8px solid #06D6A0;
+  border-radius: 50%;
+  animation: spin 1s linear infinite, pulse 2s ease-in-out infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner-spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #ddd;
+  border-bottom: 6px solid #F1C40F;
+  border-radius: 50%;
+  animation: spin-reverse 0.5s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes spin-reverse {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
+
+@keyframes pulse {
+  0% { border-top-color: #06D6A0; }
+  50% { border-top-color: #FF006E; }
+  100% { border-top-color: #06D6A0; }
+}
+
+.dots {
+    margin: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.dot {
+  width: 30px;
+  height: 30px;
+  background: #06D6A0;
+  border-radius: 50%;
+  animation: bounce 0.6s infinite alternate;
+}
+
+.dots .dot:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.dots .dot:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.dots .dot:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.dots .dot:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+@keyframes bounce {
+  from { transform: translateY(0); }
+  to { transform: translateY(-40px); }
+}
+
+.dot-loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.dot-loader .dot {
+  width: 15px;
+  height: 15px;
+  background: #06D6A0;
+  border-radius: 50%;
+  animation: blink 1.4s infinite both;
+}
+
+.dot-loader .dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dot-loader .dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes blink {
+  0%, 80%, 100% { opacity: 0.2; }
+  40% { opacity: 1; }
+}
